@@ -1,0 +1,45 @@
+  services:
+    reverse-proxy:
+      # The official v3 Traefik docker image
+      image: traefik:v3.4
+      # Enables the web UI and tells Traefik to listen to docker
+      command: --api.insecure=true --providers.docker
+      ports:
+        # The HTTP port
+        - "80:80"
+        # The Web UI (enabled by --api.insecure=true)
+        - "8080:8080"
+      volumes:
+        # So that Traefik can listen to the Docker events
+        - /var/run/docker.sock:/var/run/docker.sock
+
+    url-short:
+      image: url-shorten:1.0
+#      ports:
+#        - "8081:8081"
+      environment:
+        - SERVER_PORT=8081
+      depends_on:
+        postgres:
+          condition: service_healthy
+      labels:
+        - "traefik.enable=true"
+        - "traefik.http.routers.url-short.rule=Host(`short.local`)"
+        - "traefik.http.services.url-short.loadbalancer.server.port=8081"
+
+
+    postgres:
+      image: postgres:17.0
+      healthcheck:
+        test: [ "CMD", "pg_isready", "-q", "-d", "urlshortener", "-U", "postgres" ]
+        interval: 10s
+        timeout: 5s
+        retries: 5
+      environment:
+        POSTGRES_PASSWORD: postgres
+        POSTGRES_DB: urlshortener
+      ports:
+        - "5432:5432"
+#networks:
+#  traefik:
+#    driver: bridge
