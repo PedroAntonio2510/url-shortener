@@ -14,7 +14,7 @@
         - /var/run/docker.sock:/var/run/docker.sock
 
     url-short:
-      image: url-shorten:1.0
+      image: url-shortener:1.0
 #      ports:
 #        - "8081:8081"
       environment:
