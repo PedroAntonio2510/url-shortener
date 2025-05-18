@@ -1,4 +1,4 @@
-package br.com.pedro.urlshortener.Links;
+package br.com.pedro.urlshortener.link;
 
 import org.springframework.stereotype.Component;
 

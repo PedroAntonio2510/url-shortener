@@ -1,5 +1,7 @@
-package br.com.pedro.urlshortener.Links;
+package br.com.pedro.urlshortener.link;
 
+import br.com.pedro.urlshortener.qrcode.QrCodeGeneratorService;
+import com.google.zxing.WriterException;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,14 +17,14 @@ public class LinkController {
 
     private final LinkService linkService;
 
-    public LinkController(LinkService linkService) {
+    public LinkController(LinkService linkService){
         this.linkService = linkService;
     }
 
     @PostMapping("/api/shorten")
-    public ResponseEntity<Map<String, String>> generateShorUrl(@RequestBody Map<String, String> request) {
+    public ResponseEntity<Map<String, String>> generateShorUrl(@RequestBody Map<String, String> request) throws IOException, WriterException {
         String url = request.get("url");
-        Link link = linkService.shortUrl(url);
+        Link link = this.linkService.shortUrl(url);
 
         String generateRedirectUrl = "http://short.local/" + link.getShortUrl();
 //        String generateRedirectUrl = "http://localhost:8080/" + link.getShortUrl();
