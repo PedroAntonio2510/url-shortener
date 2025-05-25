@@ -1,6 +1,5 @@
 package br.com.pedro.urlshortener.link;
 
-import br.com.pedro.urlshortener.qrcode.QrCodeGeneratorService;
 import com.google.zxing.WriterException;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.http.HttpStatus;
@@ -17,7 +16,7 @@ public class LinkController {
 
     private final LinkService linkService;
 
-    public LinkController(LinkService linkService){
+    public LinkController(LinkService linkService) {
         this.linkService = linkService;
     }
 
