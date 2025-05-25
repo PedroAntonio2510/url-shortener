@@ -15,11 +15,9 @@
 
     url-short:
       image: url-shortener:1.0
-#      ports:
-#        - "8081:8081"
       environment:
-        - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
-        - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+        - AWS_ACESS_KEY_ID=${AWS_ACESS_KEY_ID}
+        - AWS_SECRET_ACESS_KEY=${AWS_SECRET_ACESS_KEY}
         - AWS_REGION=${AWS_REGION}
         - AWS_BUCKET_NAME=${AWS_BUCKET_NAME}
         - SERVER_PORT=8081
@@ -30,7 +28,7 @@
         - "traefik.enable=true"
         - "traefik.http.routers.url-short.rule=Host(`short.local`)"
         - "traefik.http.services.url-short.loadbalancer.server.port=8081"
-        - "traefik.http.routers.url-short.tls=true"
+#        - "traefik.http.routers.url-short.tls=true"
 
 
     postgres:

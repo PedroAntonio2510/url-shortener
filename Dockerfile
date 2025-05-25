@@ -10,9 +10,9 @@ COPY --from=build /app/target/*.jar app.jar
 
 ENV SPRING_PROFILES_ACTIVE='prod'
 
-#ARG AWS_ACESS_KEY_ID
-#ARG AWS_SECRET_ACESS_KEY
-#
+##ARG AWS_ACESS_KEY_ID
+##ARG AWS_SECRET_ACESS_KEY
+##
 #ENV AWS_REGION=us-east-1
 #ENV AWS_BUCKET_NAME=urlshort-bucket
 
