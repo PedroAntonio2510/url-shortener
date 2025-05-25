@@ -127,11 +127,3 @@ docker compose up
   "message": "Link deleted successfully"
 }
 ```
-<h3>Observação</h3>
-<p>Para acessar o sistema usando <code>http://short.local</code>, pode ser necessário editar o arquivo <code>/etc/hosts</code> do seu sistema operacional e adicionar a seguinte linha:
-</p>
-
-```txt
-127.0.0.1   short.local
-```
-Isso garante que o domínio <code>short.local</code> aponte para o seu ambiente local.
