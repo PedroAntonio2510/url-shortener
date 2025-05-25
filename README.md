@@ -61,6 +61,17 @@ aws.acess-key-id=${AWS_ACESS_KEY_ID}
 aws.secret-acess-key=${AWS_SECRET_ACESS_KEY}
 ```
 
+<h3>Warning ⚠</h3>
+<p>To acess the endpoints using <code>http://short.local</code>, may be necessary to change your <code>/etc/hosts</code> 
+archive on your operating system and add or edit the following line to:
+</p>
+
+```txt
+127.0.0.1   short.local
+```
+That guarantees that the domain <code>short.local</code> points to your localhost.
+
+
 <h3>Starting</h3>
 
 How to start your project
@@ -116,3 +127,11 @@ docker compose up
   "message": "Link deleted successfully"
 }
 ```
+<h3>Observação</h3>
+<p>Para acessar o sistema usando <code>http://short.local</code>, pode ser necessário editar o arquivo <code>/etc/hosts</code> do seu sistema operacional e adicionar a seguinte linha:
+</p>
+
+```txt
+127.0.0.1   short.local
+```
+Isso garante que o domínio <code>short.local</code> aponte para o seu ambiente local.
