@@ -1,0 +1,22 @@
+spring.application.name=url-shortener
+server.port=${SERVER_PORT}\
+ # Database Configuration
+spring.datasource.url=jdbc:postgresql://postgres:5432/{DATABASE_NAME_ON_DOCKER-COMPOSE}
+spring.datasource.username=postgres
+spring.datasource.password=postgres
+spring.datasource.driver-class-name=org.postgresql.Driver
+# JPA Configuration
+spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.format_sql=true
+# Logging Configuration
+logging.level.org.springframework=INFO
+logging.level.org.hibernate.SQL=DEBUG
+logging.level.org.hibernate.type.descriptor.sql.BasicBinder=TRACE
+
+#AWS
+aws.s3.bucket-name=${AWS_BUCKET_NAME}
+aws.s3.region=${AWS_REGION}
+aws.acess-key-id=${AWS_ACESS_KEY_ID}
+aws.secret-acess-key=${AWS_SECRET_ACESS_KEY}
