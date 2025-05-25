@@ -5,7 +5,7 @@
 [POSTGRES_BADGE]:https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white
 
 
-<h1 align="center" style="font-weight: bold;">Project name 💻</h1>
+<h1 align="center" style="font-weight: bold;">Url Shortener💻</h1>
 
 ![AWS][AWS_BADGE]
 ![spring][SPRING_BADGE]
@@ -18,7 +18,7 @@
 </p>
 
 <p align="center">
-  <b>System for shortening links, with Docker, Traefik as reverse proxy, and a system that identifies shortened URLs based on the domain and URl structure.</b>
+  <b>System for shortening links with Docker, Traefik as reverse proxy, and a system that identifies shortened URLs based on the domain and URl structure.</b>
 </p>
 
 <h2 id="started">🚀 Getting started</h2>
