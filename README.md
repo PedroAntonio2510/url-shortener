@@ -5,7 +5,7 @@
 [POSTGRES_BADGE]:https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white
 
 
-<h1 align="center" style="font-weight: bold;">Url Shortener💻</h1>
+<h1 align="center" style="font-weight: bold;">Url Shortener 🔗</h1>
 
 ![AWS][AWS_BADGE]
 ![spring][SPRING_BADGE]
