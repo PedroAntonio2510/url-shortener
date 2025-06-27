@@ -34,3 +34,6 @@ build/
 application-dev.properties
 application-prod.properties
 .env
+
+**/jwt/app.key
+**/jwt/app.pub
